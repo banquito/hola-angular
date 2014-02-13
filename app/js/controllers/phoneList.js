@@ -1,10 +1,13 @@
 (function () {
-  var controllers = angular.module('controllers', []);
+  
+  app.controller('PhoneListCtrl', ['$scope', 'phoneService',
+    function PhoneListCtrl($scope, phoneService) {
+      phoneService.getAll(function(data) {
+        $scope.phones = data;
+      });
 
-  controllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams',
-    function($scope, $routeParams) {
-      $scope.phoneId = $routeParams.phoneId;
+      $scope.orderProp = 'age';
     }
   ]);
-  
+
 })();

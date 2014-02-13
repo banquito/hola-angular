@@ -3,8 +3,7 @@ var app = null;
     'use strict';
 
   app = angular.module('phonecatApp', [
-    'ngRoute',
-    'controllers'
+    'ngRoute'
   ]);
 
   app.config(['$routeProvider',
